@@ -1,7 +1,5 @@
-package Week10.FourthTask;
+package Week_10.FourthTask;
 
-import javax.annotation.processing.FilerException;
-import java.security.CodeSigner;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;

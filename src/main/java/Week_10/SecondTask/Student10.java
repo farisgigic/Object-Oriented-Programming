@@ -1,9 +1,6 @@
-package Week10.SecondTask;
+package Week_10.SecondTask;
 
-import javax.xml.datatype.DatatypeConstants;
 import java.lang.reflect.Field;
-import java.lang.reflect.Modifier;
-import java.text.Format;
 import java.util.List;
 import java.util.ArrayList;
 import java.lang.reflect.InvocationTargetException;
