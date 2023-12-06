@@ -1,5 +1,7 @@
 package Week6.LibraryInfoSystem;
 
+import week06.Lab.LibraryInformationSystem.Book;
+
 import java.util.ArrayList;
 
 public class Library {
@@ -28,9 +30,9 @@ public class Library {
         }
         return returnList;
     }
-    public ArrayList<Book> searchByTitle(String title) {
-        ArrayList<Book> returnList = new ArrayList<>();
-        for(Book book : bookList) {
+    public ArrayList<week06.Lab.LibraryInformationSystem.Book> searchByTitle(String title) {
+        ArrayList<week06.Lab.LibraryInformationSystem.Book> returnList = new ArrayList<>();
+        for(week06.Lab.LibraryInformationSystem.Book book : bookList) {
             if (StringUtils.included(book.title(), title)) {
                 returnList.add(book);
             }
@@ -38,8 +40,8 @@ public class Library {
         return returnList;
     }
     public ArrayList<Book> searchByYear(int year) {
-        ArrayList<Book> returnList = new ArrayList<>();
-        for(Book book : bookList) {
+        ArrayList<week06.Lab.LibraryInformationSystem.Book> returnList = new ArrayList<>();
+        for(week06.Lab.LibraryInformationSystem.Book book : bookList) {
             if (book.year() == year) {
                 returnList.add(book);
             }

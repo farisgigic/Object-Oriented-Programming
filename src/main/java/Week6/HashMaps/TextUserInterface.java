@@ -3,6 +3,7 @@ import jdk.jshell.Snippet;
 import java.util.Scanner;
 import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Map;
 
 public class TextUserInterface {
 
@@ -32,32 +33,23 @@ public class TextUserInterface {
                     String word = scanner.nextLine();
                     System.out.print("Translation: ");
                     String translation = scanner.nextLine();
-                    this.userDictionary.add(word, translation);
+                    this.userDictionary.put(word, translation);
                     break;
 
                 case "Translate":
                     System.out.print("Give a word: ");
                     String wordInput = scanner.nextLine();
-                    String translationOutput = "";
-                    for(String w : this.userDictionary.getMap().keySet()) {
-                        if(!this.userDictionary.getMap().containsKey(wordInput)) {
-                            translationOutput = "word not found";
-                            break;
-                        }
-                        if(w.equals(wordInput)) {
-                            translationOutput = this.userDictionary.getMap().get(w);
-                            break;
-                        }
-                    }
-                    System.out.println("Translation: " + translationOutput);
-                    break;
 
-                default:
-                    System.out.println("Unknown statement");
+                    String translationOutput = (String) userDictionary.get(wordInput);
+                    if (translationOutput != null) {
+                        System.out.println("Translation: " + translationOutput);
+                    } else {
+                        System.out.println("Translation: word not found");
+                    }
                     break;
 
             }
         }
     }
 }
-}
+
