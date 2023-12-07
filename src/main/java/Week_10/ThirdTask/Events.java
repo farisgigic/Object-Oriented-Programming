@@ -36,10 +36,15 @@ public class Events {
 
             try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
                 String line;
+                int counter = 0;
                 while((line = reader.readLine()) != null){
                     System.out.println(reader.readLine());
-                    //reader.close();
+                    counter++;
+                    if(counter >= 5){
+                        break;
+                    }
                 }
+                reader.close();
 
             }
 
