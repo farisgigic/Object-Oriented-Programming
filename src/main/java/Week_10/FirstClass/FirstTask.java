@@ -21,7 +21,7 @@ class User
 {
     private String username;
     public User(String username){
-        this.username=username;
+        this.username = username;
     }
     public String getUsername(){
         return this.username;
@@ -43,23 +43,24 @@ class Admin
 
 
 public class FirstTask {
-    @CanSendMessage
+
     @RequiresPermission(level=1)
-    public void sendMessage(User user, String name){
-        System.out.println("User" + user.getUsername());
+    public void sendMessage(User user, String message){
+
+        System.out.println("You are not allowed to send messages!");
     }
-    @CanSendMessage
+
     @RequiresPermission(level = 2 )
     public void sendMessage(Admin admin, String message){
-        System.out.println("Admin "+ admin.getUsername());
+        System.out.println("Admin "+ admin.getUsername()+ " "  +message);
     }
 
     public static void main(String[] args) {
         FirstTask t1 = new FirstTask();
         User u1 = new User("User");
         Admin a1 = new Admin("Admin");
-        t1.sendMessage(u1,"Something");
-        t1.sendMessage(a1,"SomethingElse");
+        t1.sendMessage(a1,"Something");
+        t1.sendMessage(u1,"SomethingElse");
     }
 
 }
